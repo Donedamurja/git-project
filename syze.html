@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klinika</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Contact Us</title>
+    <!-- bootstrap link -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- my style -->
+    <link rel="stylesheet" href="klinika.css">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,700&display=swap"
+        rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg" style="background-color: #5052c4">
+        <div class="container-fluid">
+            <img src="receta.jpeg" alt="Logo" style="width:80px;" >
+            <a class="navbar-brand" style="color:#ffffff"   href="#"> Klinika Europiane e Syve  
+                 <br> European Eye Clinic      
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active"  style="color:#ffffff" href="#">DR Kastriot Borici <br> Mobile : 069 20 21 343 <br> 068 27 68 008</a>
+                </li>
+              </ul>
+            <!--
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul id="nav">
+                    <ul class="navbar-nav me-auto mb-4 mb-lg-3"> 
+                    <ul class="navbar-nav text-right">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="#">DR Kastriot Borici <br> Mobile : 069 20 21 343 <br> 068 27 68 008 </a>
+                    </li> 
+                    
+                    </ul>
+                </ul>
+        
+    
+            </div>
+        -->
+        </div>
+     </nav>
+ </div>
+ <!-- fund navbar -->
+
+    <h1 id="titull">Receta e pacientit</h1>
+    
+    
+    <script type="text/javascript" src="emri.js">
+    </script>
+    <div id="myDIV">
+        <script>
+            function getExperience()
+            {
+                var xp = document.getElementById('txt_XP').value;
+                var newxp = parseInt(xp);
+                var div = newxp/30;
+                document.getElementById("plank").innerHTML = div;
+            }
+            </script>
+            <table>
+            <tr>
+                <td>Plank</td>
+                <td id="plankXP">30</td>
+                <td id="plank">0</td>
+            </tr>
+            </table>
+            <input type="text" id="txt_XP" name="txt_XP" />
+            <input type="button" onclick="getExperience();" />
+            
+    <button onclick="window.print()">Printo receten</button>
+    <!--
+    <footer class="bg-light py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3 ps-5 ">
+                    <h3 class="fs-3 fw-bold text-dark"><a href="" class="text-decoration-none text-dark"></a>
+                    </h3>
+                    <p>Rr." Medar Shtylla " Qendra e Biznesit "Alban CO " , Kat 2 , Komuna e Parisit - TIRANE </p>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+    </footer>
+        fund footer -->
+        <footer class="text-center text-lg-start bg-light text-muted">
+        <div class="text-center p-4" style="background-color:rgb(55, 55, 158)">
+            <a class="footer-brand" style="color:#ffffff "   href="#"> 
+            Rr." Medar Shtylla " Qendra e Biznesit "Alban CO " , Kat 2 , Komuna e Parisit - TIRANE
+            <br> <i class="fa-brands fa-instagram" >@europeaneyeclinic</i>
+            <i class="fa-brands fa-facebook"> european eye clinic </i>
+            <i class="fa-solid fa-envelope"> drborici@hotmail.com</i>
+        </a>
+            </div>
+        </div>
+        </footer>
+
+</body>
+
+</html>
