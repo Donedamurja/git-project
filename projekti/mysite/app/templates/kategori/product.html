@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% load static %}
+{% block title %} Product {% endblock %}
+{% block content %}
+<div class="container mb-5">
+        <div class="row mt-5">
+            <div class="col-12 col-md-6 bg-light p-5 my-auto">
+                <h4 class="fw-light">Ora dhe Bizhuteri</h4>
+                <h3 class="fs-1">{{pro.product_name}}</h3>
+                <p class="fs-3 fw-light">{{pro.product_text}}</p>
+                <div >
+                    <p>Material : {% for material in pro.product_material.all %} {{material}} {% endfor %}</p>
+                    <p>Color : {% for color in pro.product_color.all %} {{color}} {% endfor %} </p>
+                    <p>Garanci: {{pro.product_garanci}} vite </p>
+                    <p>Water Resistent: {{pro.product_wateresistent}} m</p>
+                    
+                </div>
+                <p class="fw-bolder fs-3">${{pro.product_price}}</p>
+                <button type="button" class="btn btn-outline-dark">Bli Tani</button>
+            </div>
+            
+            <div class="col-12 col-md-6 d-flex justify-content-center align-content-center">
+                <img src="{{pro.product_image.url}}" class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+    {% endblock %}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% load static %}
+{% block title %} Category Products {% endblock %}
+{% block content %}
+
+    <!-- banner-->
+    <div class="container-fluid position-relative p-0  ">
+        <div class="cover">
+            <img src="{{cat_pro.category_image.url}}" alt="" class="img-fluid">
+        </div>
+        <div class="info-cover position-absolute w-50 top-50 start-50 translate-middle text-center">
+            <h2 class="fw-light text-white fs-1 mb-5">Produktet me te mira per {{cat_pro.category_name}}
+            </h2>
+            <h1 class="fs-1 text-white mb-5 pb-5">Bli tani</h1>
+        </div>
+    </div>
+    
+    <!-- Category product -->
+    <div class="container my-5 pt-5">
+        <div class="my-5 text-center">
+            <h3 class="text-uppercase fw-light">Trendi i momentit</h3>
+            <h2 class="fs-1">Orat me te mira</h2>
+        </div>
+        <div class="row">
+            {% for cat_pro in product_cat %}
+            <!-- PROD1 -->
+        <div class="col-12 col-md-6 col-lg-3 mt-5">
+            <div class="card h-100 p-2 bg-light border-0">
+                <img src="{{cat_pro.product_image.url}}" class="card-img-top mt-3 img-fluid watch" alt="{{cat_pro.}}">
+                <div class="card-body text-center">
+                    <h4 class="card-title fw-bolder mt-3">{{cat_pro.product_name}}</h4>
+                    <p class="card-text fw-bold mt-3 fs-3">${{cat_pro.product_price}}</p>
+                    <a href="../product/{{cat_pro.product_id}}" class="btn btn-dark rounded-circle mt-3"><i
+                        class="fas fa-chevron-right"></i>Shiko</a>
+                    <!--<a href="kategori/product/{{cat_pro.product_id}}" class="btn btn-outline-info">BLI TANI</a> -->
+                </div>
+            </div>
+        </div>
+        <!-- fund PROD1 1 -->
+        {% endfor %}
+        </div>
+    </div>
+    <!-- fund Category product -->
+    {% endblock %}
+    

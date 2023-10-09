@@ -1,0 +1,94 @@
+#nav {
+    width:750px;
+    margin:0 auto;
+    list-style:none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+    }
+    #nav li {
+    float:left;
+    }
+    #nav a {
+    display:block;
+    text-align:center;
+    width:130px; /* fixed width */
+    text-decoration:solid;
+    color:rgb(7, 7, 7); 
+    }
+.carousel-inner, .carousel-inner .carousel-item img{
+    height: 700px;
+}
+
+.img-container {
+    width: 240px;
+    height: 200px;
+ }
+ 
+ .watch{
+    
+        width: 300px;
+        height: 200px;
+        object-fit: cover; 
+ }
+
+
+    .navbar-toggler {
+        padding: .25rem .75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: #00000000;
+        border: 1px solid #00000000;
+        border-radius: .25rem;
+        transition: box-shadow .15s ease-in-out;
+    }
+    .container-fluid text-center bg-grey {
+        bottom: 0;
+        margin: 0 auto !important;
+        padding-left: 0%;
+        padding-right: 0%;
+        text-align: center !important;
+        width: 100% !important;
+        height: 40px;
+        position: absolute;
+    }
+    #map 
+        {height:100%; width:100%;}
+    .button {
+            border-radius: 4px;
+            background-color: #000000;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 18px;
+            padding: 10px;
+            width: 100px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+          }
+          
+          .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+          }
+          
+          .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+          }
+          
+          .button:hover span {
+            padding-right: 25px;
+          }
+          
+          .button:hover span:after {
+            opacity: 1;
+            right: 0;
+          }
+          

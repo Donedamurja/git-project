@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+{% block content %}
+
+
+<!--fillim karosel-->
+          <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
+        
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'images/ontimefoto.jpeg' %}" alt="..." class="d-block " style="width:100%" >
+            <div class="carousel-caption d-none d-md-block">
+              <h3>On Time </h3>
+              <p>Watches & Jewelry  </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1585870683904-a382fbb42754?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80 " alt="..." class="d-block" style="width:100%">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>TRANSPORTI FALAS</h3>
+              <p>Paguaj ne momentin qe merr porosine.</p>
+            </div> 
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1507680576301-98c2029cf434?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="New York" class="d-block" style="width:100%">
+            <div class="carousel-caption d-none d-md-block ">
+              <h3>Couple watches</h3>
+              <p>Dy dhurata ne nje vend </p>
+            </div>  
+          </div>
+        </div>
+        
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+      
+      <div class="container-fluid mt-3">
+    
+      </div>
+<!-- FUND CAROSEL -->
+<div class="container my-5 pt-5">
+    <div class="my-5 text-center">
+        <h3 class="text-uppercase fw-light">Produkte </h3>
+        <h2 class="fs-1">Cilesi dhe garanci</h2>
+    </div>
+    <div  class="row">
+        {% for product in products %}
+         <!--prod1-->  
+        <div class="col-12 col-md-6 col-lg-3 mt-5" >
+          <div class="card h-100 p-2 bg-light border-0">
+            
+              <img src="{{product.product_image.url}}" class="card-img-top mt-3 img-fluid watch" 
+                  alt="{{product.product_alt}}">
+              <div class="card-body text-center">
+                  <h4 class="card-title fw-bolder mt-3">{{product.product_name}}</h4>
+                  <p class="card-text fw-bold mt-3 fs-3">${{product.product_price}}</p>
+                  <div class="mt-3">
+                      {{product.product_review | safe }}
+                  </div>
+                  <a href="product/{{product.product_id}}" class="btn btn-dark rounded-circle mt-3">
+                    <i class="fas fa-chevron-right"></i>Shiko</a>
+              </div>
+            
+          </div>
+      </div>
+       <!--fund prod 1 -->
+      {% endfor %} 
+        
+        <!-- button -->
+        <div class="d-flex justify-content-center align-content-center my-5 pt-5">
+            
+            <style>
+              .button {
+                border-radius: 4px;
+                background-color: #000000;
+                border: none;
+                color: #FFFFFF;
+                text-align: center;
+                font-size: 18px;
+                padding: 10px;
+                width: 100px;
+                transition: all 0.5s;
+                cursor: pointer;
+                margin: 5px;
+              }
+              
+              .button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+              }
+              
+              .button span:after {
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+              }
+              
+              .button:hover span {
+                padding-right: 25px;
+              }
+              
+              .button:hover span:after {
+                opacity: 1;
+                right: 0;
+              }
+              
+              </style>
+              <a href="{% url 'products' %}" class="button"><span> Dyqani </span></a>
+        </div>
+    </div>
+</div>
+<!-- Container (Portfolio Section) -->
+<div class="container-fluid text-center bg-grey">
+  <h2>Dyqani</h2><br>
+  <h4>Ajo cfare ne ofrojme</h4>
+  <div class="row text-center">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="{% static 'images/ore1.jpg' %}" alt="" width="400" height="500">
+        <p><strong>Ore per Femra </strong></p>
+        <p>Charm & Elegance </p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="{% static 'images/oreme7.jpg' %}" alt="" width="400" height="500">
+        <p><strong>Ore per meshkuj </strong></p>
+        <p>Class & Finesse </p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="{% static 'images/kateryna-hliznitsova-ceSCZzjTReg-unsplash.jpg' %}" alt="" width="400" height="500">
+        <p><strong>Bizhu</strong></p>
+        <p>Women & Men </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- newsletter -->
+<div class="container-fluid position-relative mt-5 p-0">
+    <div class="cover">
+        <img src="https://images.unsplash.com/photo-1630168355938-8a482bdfa6b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1010&q=80" width="100%"  alt="" class="img-fluid">
+    </div>
+    <div class="info-cover position-absolute w-50 top-50 start-50 translate-middle text-center">
+        <h3 class="fs-1 text-black ">ABONOHU</h3>
+        <form action="" class="w-100 mt-5">
+            <div class="mb-3">
+                <input type="email" class="form-control py-3 px-5 rounded-pill w-100 position-relative" id="email"
+                    placeholder="Vendosni adresen e email">
+                <input type="submit" class="btn rounded-pill btn-dark text-light py-2 px-3 position-center"
+                    name="submit" id="submit" value="Vazhdo">
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<!-- fund newsletter -->
+<div class="container-fluid bg-1 text-center">
+  <h3>RRETH NESH </h3>
+  <img src="{% static 'images/ontimefoto.jpeg' %}" class="img-circle" alt="" width="350" height="350">
+
+</div>
+
+<div class="container-fluid bg-2 text-center">
+  <h3>Me shume rreth dyqanit </h3>
+  <p>Dyqani eshte hapur ne vitin 2005 duke ju ofruar klienteve ora te brendeve nderkombetare , cilesi maksimale dhe garanci per te gjitha produktet tona </p>
+</div>
+
+<div class="container-fluid bg-3 text-center">
+  <h3>Ku mund te na gjeni </h3>
+  <p>Ndodhemi ne Rrugen e Kavajes ne Tirane prane "Abi Bank" </p>
+</div>
+
+<!-- Image of location/map -->
+<div class="container-fluid text-center bg-grey">
+  <h2>Vendodhja </h2>
+  </div>
+  <style>
+        #map 
+        {height:100%; width:100%;}
+        html,body 
+        {height:95%;margin:0;padding:0;}
+        </style>
+        </head>
+        <body>
+            
+            <!--Elementi div per harten -->
+            <div id="map">
+
+            </div>
+            <script>
+            function initMap(){
+                // Pozicioni i FSHN
+                var fshn ={lat:41.32815,lng:19.81306 };
+                // Harta e qenderzuartek FSHN
+                var map =new google.maps.Map(document.getElementById('map'),{zoom:20,center:fshn});
+                // Markeri i pozicionuar tek FSHN
+                var marker =new google.maps.Marker({position:fshn,map:map});
+            }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?
+key=AIzaSyA3oXFUlmS2naI6E5rWEBXbf19K6qS4m0c&callback=initMap">
+</script>
+{% endblock %}
